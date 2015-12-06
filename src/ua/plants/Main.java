@@ -5,6 +5,10 @@
  */
 package ua.plants;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import ua.plants.generated.GreenHouse;
 import ua.plants.parser.XMLParser;
 import ua.plants.parser.XMLParserFactory;
 
@@ -17,10 +21,13 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         XMLParserFactory factory = XMLParserFactory.getInstance(XMLParserFactory.XMLParserType.DOM);
         XMLParser xmlParser = factory.getXMLParser();
-        System.out.println(xmlParser);
+        
+        InputStream is = new FileInputStream("src/xmlFiles/greenhouse.xml");
+        GreenHouse parsedGreenHouse = xmlParser.parse(is);
+        System.out.println(parsedGreenHouse);
     }
     
 }

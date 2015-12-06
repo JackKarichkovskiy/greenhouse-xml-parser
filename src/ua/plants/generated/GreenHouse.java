@@ -28,12 +28,12 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="flowers">
+ *         &lt;element name="plants">
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
- *                   &lt;element name="flower" maxOccurs="unbounded" minOccurs="0">
+ *                   &lt;element name="plant" maxOccurs="unbounded" minOccurs="0">
  *                     &lt;complexType>
  *                       &lt;complexContent>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -112,36 +112,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "flowers"
+    "plants"
 })
-@XmlRootElement(name = "GreenHouse")
+@XmlRootElement(name = "greenhouse")
 public class GreenHouse {
 
     @XmlElement(required = true)
-    protected GreenHouse.Flowers flowers;
+    protected GreenHouse.Plants plants;
 
     /**
-     * Gets the value of the flowers property.
+     * Gets the value of the plants property.
      * 
      * @return
      *     possible object is
-     *     {@link GreenHouse.Flowers }
+     *     {@link GreenHouse.Plants }
      *     
      */
-    public GreenHouse.Flowers getFlowers() {
-        return flowers;
+    public GreenHouse.Plants getPlants() {
+        return plants;
     }
 
     /**
-     * Sets the value of the flowers property.
+     * Sets the value of the plants property.
      * 
      * @param value
      *     allowed object is
-     *     {@link GreenHouse.Flowers }
+     *     {@link GreenHouse.Plants }
      *     
      */
-    public void setFlowers(GreenHouse.Flowers value) {
-        this.flowers = value;
+    public void setPlants(GreenHouse.Plants value) {
+        this.plants = value;
     }
 
 
@@ -155,7 +155,7 @@ public class GreenHouse {
      *   &lt;complexContent>
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
-     *         &lt;element name="flower" maxOccurs="unbounded" minOccurs="0">
+     *         &lt;element name="plant" maxOccurs="unbounded" minOccurs="0">
      *           &lt;complexType>
      *             &lt;complexContent>
      *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -229,39 +229,39 @@ public class GreenHouse {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "flower"
+        "plant"
     })
-    public static class Flowers {
+    public static class Plants {
 
-        protected List<GreenHouse.Flowers.Flower> flower;
+        protected List<GreenHouse.Plants.Plant> plant;
 
         /**
-         * Gets the value of the flower property.
+         * Gets the value of the plant property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the flower property.
+         * This is why there is not a <CODE>set</CODE> method for the plant property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getFlower().add(newItem);
+         *    getPlant().add(newItem);
          * </pre>
          * 
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link GreenHouse.Flowers.Flower }
+         * {@link GreenHouse.Plants.Plant }
          * 
          * 
          */
-        public List<GreenHouse.Flowers.Flower> getFlower() {
-            if (flower == null) {
-                flower = new ArrayList<GreenHouse.Flowers.Flower>();
+        public List<GreenHouse.Plants.Plant> getPlant() {
+            if (plant == null) {
+                plant = new ArrayList<GreenHouse.Plants.Plant>();
             }
-            return this.flower;
+            return this.plant;
         }
 
 
@@ -346,7 +346,7 @@ public class GreenHouse {
             "growingTips",
             "multiplying"
         })
-        public static class Flower {
+        public static class Plant {
 
             @XmlElement(required = true)
             protected String name;
@@ -355,9 +355,9 @@ public class GreenHouse {
             @XmlElement(required = true)
             protected String origin;
             @XmlElement(required = true)
-            protected GreenHouse.Flowers.Flower.VisualParams visualParams;
+            protected GreenHouse.Plants.Plant.VisualParams visualParams;
             @XmlElement(required = true)
-            protected GreenHouse.Flowers.Flower.GrowingTips growingTips;
+            protected GreenHouse.Plants.Plant.GrowingTips growingTips;
             @XmlElement(required = true)
             protected String multiplying;
             @XmlAttribute(name = "id", required = true)
@@ -440,10 +440,10 @@ public class GreenHouse {
              * 
              * @return
              *     possible object is
-             *     {@link GreenHouse.Flowers.Flower.VisualParams }
+             *     {@link GreenHouse.Plants.Plant.VisualParams }
              *     
              */
-            public GreenHouse.Flowers.Flower.VisualParams getVisualParams() {
+            public GreenHouse.Plants.Plant.VisualParams getVisualParams() {
                 return visualParams;
             }
 
@@ -452,10 +452,10 @@ public class GreenHouse {
              * 
              * @param value
              *     allowed object is
-             *     {@link GreenHouse.Flowers.Flower.VisualParams }
+             *     {@link GreenHouse.Plants.Plant.VisualParams }
              *     
              */
-            public void setVisualParams(GreenHouse.Flowers.Flower.VisualParams value) {
+            public void setVisualParams(GreenHouse.Plants.Plant.VisualParams value) {
                 this.visualParams = value;
             }
 
@@ -464,10 +464,10 @@ public class GreenHouse {
              * 
              * @return
              *     possible object is
-             *     {@link GreenHouse.Flowers.Flower.GrowingTips }
+             *     {@link GreenHouse.Plants.Plant.GrowingTips }
              *     
              */
-            public GreenHouse.Flowers.Flower.GrowingTips getGrowingTips() {
+            public GreenHouse.Plants.Plant.GrowingTips getGrowingTips() {
                 return growingTips;
             }
 
@@ -476,10 +476,10 @@ public class GreenHouse {
              * 
              * @param value
              *     allowed object is
-             *     {@link GreenHouse.Flowers.Flower.GrowingTips }
+             *     {@link GreenHouse.Plants.Plant.GrowingTips }
              *     
              */
-            public void setGrowingTips(GreenHouse.Flowers.Flower.GrowingTips value) {
+            public void setGrowingTips(GreenHouse.Plants.Plant.GrowingTips value) {
                 this.growingTips = value;
             }
 
@@ -610,6 +610,11 @@ public class GreenHouse {
                     this.watering = value;
                 }
 
+                @Override
+                public String toString() {
+                    return "GrowingTips{" + "temparature=" + temparature + ", lighting=" + lighting + ", watering=" + watering + '}';
+                }
+
             }
 
 
@@ -712,10 +717,26 @@ public class GreenHouse {
                     this.averageSize = value;
                 }
 
+                @Override
+                public String toString() {
+                    return "VisualParams{" + "stalkColor=" + stalkColor + ", leafColor=" + leafColor + ", averageSize=" + averageSize + '}';
+                }
             }
 
+            @Override
+            public String toString() {
+                return "Plant{" + "name=" + name + ", soil=" + soil + ", origin=" + origin + ", visualParams=" + visualParams + ", growingTips=" + growingTips + ", multiplying=" + multiplying + ", id=" + id + '}';
+            }
         }
 
+        @Override
+        public String toString() {
+            return "Plants{" + "plant=" + plant + '}';
+        }
     }
 
+    @Override
+    public String toString() {
+        return "GreenHouse{" + "plants=" + plants + '}';
+    }
 }

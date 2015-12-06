@@ -8,66 +8,70 @@ package ua.plants.generated;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
+
 /**
- * This object contains factory methods for each Java content interface and Java
- * element interface generated in the generated package.
- * <p>
- * An ObjectFactory allows you to programatically construct new instances of the
- * Java representation for XML content. The Java representation of XML content
- * can consist of schema derived interfaces and classes representing the binding
- * of schema type definitions, element declarations and model groups. Factory
- * methods for each of these are provided in this class.
- *
+ * This object contains factory methods for each 
+ * Java content interface and Java element interface 
+ * generated in the generated package. 
+ * <p>An ObjectFactory allows you to programatically 
+ * construct new instances of the Java representation 
+ * for XML content. The Java representation of XML 
+ * content can consist of schema derived interfaces 
+ * and classes representing the binding of schema 
+ * type definitions, element declarations and model 
+ * groups.  Factory methods for each of these are 
+ * provided in this class.
+ * 
  */
 @XmlRegistry
 public class ObjectFactory {
 
+
     /**
-     * Create a new ObjectFactory that can be used to create new instances of
-     * schema derived classes for package: generated
-     *
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: generated
+     * 
      */
     public ObjectFactory() {
     }
 
     /**
      * Create an instance of {@link GreenHouse }
-     *
+     * 
      */
-    public GreenHouse createGreenHouse() {
+    public static GreenHouse createGreenHouse() {
         return new GreenHouse();
     }
 
     /**
-     * Create an instance of {@link GreenHouse.Flowers }
-     *
+     * Create an instance of {@link GreenHouse.Plants }
+     * 
      */
-    public GreenHouse.Flowers createGreenHouseFlowers() {
-        return new GreenHouse.Flowers();
+    public static GreenHouse.Plants createGreenHousePlants() {
+        return new GreenHouse.Plants();
     }
 
     /**
-     * Create an instance of {@link GreenHouse.Flowers.Flower }
-     *
+     * Create an instance of {@link GreenHouse.Plants.Plant }
+     * 
      */
-    public GreenHouse.Flowers.Flower createGreenHouseFlowersFlower() {
-        return new GreenHouse.Flowers.Flower();
+    public static GreenHouse.Plants.Plant createGreenHousePlantsPlant() {
+        return new GreenHouse.Plants.Plant();
     }
 
     /**
-     * Create an instance of {@link GreenHouse.Flowers.Flower.VisualParams }
-     *
+     * Create an instance of {@link GreenHouse.Plants.Plant.VisualParams }
+     * 
      */
-    public GreenHouse.Flowers.Flower.VisualParams createGreenHouseFlowersFlowerVisualParams() {
-        return new GreenHouse.Flowers.Flower.VisualParams();
+    public static GreenHouse.Plants.Plant.VisualParams createGreenHousePlantsPlantVisualParams() {
+        return new GreenHouse.Plants.Plant.VisualParams();
     }
 
     /**
-     * Create an instance of {@link GreenHouse.Flowers.Flower.GrowingTips }
-     *
+     * Create an instance of {@link GreenHouse.Plants.Plant.GrowingTips }
+     * 
      */
-    public GreenHouse.Flowers.Flower.GrowingTips createGreenHouseFlowersFlowerGrowingTips() {
-        return new GreenHouse.Flowers.Flower.GrowingTips();
+    public static GreenHouse.Plants.Plant.GrowingTips createGreenHousePlantsPlantGrowingTips() {
+        return new GreenHouse.Plants.Plant.GrowingTips();
     }
 
 }

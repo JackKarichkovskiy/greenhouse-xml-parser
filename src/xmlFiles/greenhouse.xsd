@@ -14,10 +14,10 @@ and open the template in the editor.
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="flowers">
+                <xs:element name="plants">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="flower" maxOccurs="unbounded" minOccurs="0">
+                            <xs:element name="plant" maxOccurs="unbounded" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element type="xs:string" name="name"/>

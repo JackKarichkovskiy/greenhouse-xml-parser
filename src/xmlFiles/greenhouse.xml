@@ -8,8 +8,8 @@ and open the template in the editor.
 
 <greenhouse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:noNamespaceSchemaLocation="greenhouse.xsd">
-    <flowers>
-        <flower id="1">
+    <plants>
+        <plant id="1">
             <name>rose</name>
             <soil>sod-podzolic</soil>
             <origin>China</origin>
@@ -24,8 +24,8 @@ and open the template in the editor.
                 <watering>100500</watering>
             </growingTips>
             <multiplying>seed</multiplying>
-        </flower>
-        <flower id="2">
+        </plant>
+        <plant id="2">
             <name>cactus</name>
             <soil>sod-podzolic</soil>
             <origin>South Africa</origin>
@@ -40,6 +40,6 @@ and open the template in the editor.
                 <lighting>false</lighting>
             </growingTips>
             <multiplying>stalk</multiplying>
-        </flower>
-    </flowers>
+        </plant>
+    </plants>
 </greenhouse>
