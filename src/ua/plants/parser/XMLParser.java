@@ -15,5 +15,5 @@ import ua.plants.generated.GreenHouse;
  */
 public interface XMLParser<T extends GreenHouse> {
 
-    T parse(InputStream is) throws Exception;
+    T parse(InputStream xmlis, InputStream xsdis) throws Exception;
 }

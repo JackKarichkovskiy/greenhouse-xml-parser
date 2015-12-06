@@ -22,11 +22,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        XMLParserFactory factory = XMLParserFactory.getInstance(XMLParserFactory.XMLParserType.DOM);
+        XMLParserFactory factory = XMLParserFactory.getInstance(XMLParserFactory.XMLParserType.SAX);
         XMLParser xmlParser = factory.getXMLParser();
         
-        InputStream is = new FileInputStream("src/xmlFiles/greenhouse.xml");
-        GreenHouse parsedGreenHouse = xmlParser.parse(is);
+        InputStream xmlis = new FileInputStream("src/xmlFiles/greenhouse.xml");
+        InputStream xsdis = new FileInputStream("src/xmlFiles/greenhouse.xsd");
+        GreenHouse parsedGreenHouse = xmlParser.parse(xmlis, xsdis);
         System.out.println(parsedGreenHouse);
     }
     

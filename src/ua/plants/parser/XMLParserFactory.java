@@ -15,7 +15,7 @@ public abstract class XMLParserFactory {
 
     public enum XMLParserType {
 
-        DOM("ua.plants.parser.dom.DOMParserFactory"), SAX("");
+        DOM("ua.plants.parser.dom.DOMParserFactory"), SAX("ua.plants.parser.sax.SAXParserFactory");
 
         private final String clazz;
 
