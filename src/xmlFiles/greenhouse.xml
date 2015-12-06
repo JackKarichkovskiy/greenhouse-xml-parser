@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<greenhouse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="greenhouse.xsd">
+    <flowers>
+        <flower id="1">
+            <name>rose</name>
+            <soil>sod-podzolic</soil>
+            <origin>China</origin>
+            <visualParams>
+                <stalkColor>green</stalkColor>
+                <leafColor>red</leafColor>
+                <averageSize>0.45</averageSize>
+            </visualParams>
+            <growingTips>
+                <temparature>20</temparature>
+                <lighting>true</lighting>
+                <watering>100500</watering>
+            </growingTips>
+            <multiplying>seed</multiplying>
+        </flower>
+        <flower id="2">
+            <name>cactus</name>
+            <soil>sod-podzolic</soil>
+            <origin>South Africa</origin>
+            <visualParams>
+                <stalkColor>brown</stalkColor>
+                <leafColor>none</leafColor>
+                <averageSize>0.5</averageSize>
+            </visualParams>
+            <growingTips>
+                <temparature>35</temparature>
+                <watering>500</watering>
+                <lighting>false</lighting>
+            </growingTips>
+            <multiplying>stalk</multiplying>
+        </flower>
+    </flowers>
+</greenhouse>

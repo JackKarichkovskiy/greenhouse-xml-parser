@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="greenhouse">
+        <xs:annotation>
+            <xs:documentation>To change this license header, choose License Headers in Project Properties.
+                To change this template file, choose Tools | Templates
+                and open the template in the editor.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="flowers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="flower" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="name"/>
+                                        <xs:element name="soil">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="podzolic"/>
+                                                    <xs:enumeration value="subterranean"/>
+                                                    <xs:enumeration value="sod-podzolic"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element type="xs:string" name="origin"/>
+                                        <xs:element name="visualParams">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="stalkColor"/>
+                                                    <xs:element type="xs:string" name="leafColor"/>
+                                                    <xs:element type="xs:float" name="averageSize"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="growingTips">
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="temparature">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:byte">
+                                                                <xs:minInclusive value="0"/>
+                                                                <xs:maxInclusive value="100"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element type="xs:boolean" name="lighting"/>
+                                                    <xs:element type="xs:int" name="watering"/>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="multiplying">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="leaf"/>
+                                                    <xs:enumeration value="stalk"/>
+                                                    <xs:enumeration value="seed"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:int" name="id" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
