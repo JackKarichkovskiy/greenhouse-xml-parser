@@ -5,11 +5,21 @@
  */
 package ua.plants.parser.dom;
 
+import java.io.File;
 import java.io.InputStream;
+import java.io.OutputStream;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import ua.plants.generated.GreenHouse;
 import ua.plants.generated.GreenHouse.Plants;
@@ -24,15 +34,44 @@ import ua.plants.parser.AbstractXMLParser;
  * @author Karichkovskiy Yevhen
  */
 class DOMParser extends AbstractXMLParser {
-    
+
     @Override
-    protected GreenHouse parseFile(InputStream xmlis) throws Exception{
+    public void renameRootElement(String newName, InputStream xmlis, InputStream xsdis, OutputStream xmlos) throws Exception {
+        super.parse(xmlis, xsdis);
+
+        Document doc = super.doc;
+
+        Element oldRoot = doc.getDocumentElement();
+
+        Element newRoot = doc.createElement(newName);
+
+        NamedNodeMap attributes = oldRoot.getAttributes();
+        for (int i = 0; i < attributes.getLength(); i++) {
+            Node attr = doc.importNode(attributes.item(i), true);
+            newRoot.getAttributes().setNamedItem(attr);
+        }
+
+        while (oldRoot.hasChildNodes()) {
+            newRoot.appendChild(oldRoot.getFirstChild());
+        }
+
+        oldRoot.getParentNode().replaceChild(newRoot, oldRoot);
+
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        Result output = new StreamResult(xmlos);
+        Source input = new DOMSource(doc);
+
+        transformer.transform(input, output);
+    }
+
+    @Override
+    protected GreenHouse parseFile(InputStream xmlis) throws Exception {
         greenHouse = ObjectFactory.createGreenHouse();
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
-                
-        Document document = db.parse(xmlis);
+
+        Document document = this.doc = db.parse(xmlis);
 
         Element root = document.getDocumentElement();
 

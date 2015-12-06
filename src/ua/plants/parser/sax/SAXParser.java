@@ -6,6 +6,7 @@
 package ua.plants.parser.sax;
 
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
@@ -26,6 +27,11 @@ import ua.plants.parser.AbstractXMLParser;
 public class SAXParser extends AbstractXMLParser {
 
     private String temp;
+
+    @Override
+    public void renameRootElement(String newName, InputStream xmlis, InputStream xsdis, OutputStream xmlos) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     class SaxHandler implements ContentHandler {
 
@@ -65,12 +71,12 @@ public class SAXParser extends AbstractXMLParser {
                     break;
                 case VISUAL_PARAMS:
                     plants.
-                            get(plants.size()-1)
+                            get(plants.size() - 1)
                             .setVisualParams(
-                            ObjectFactory.createGreenHousePlantsPlantVisualParams());
+                                    ObjectFactory.createGreenHousePlantsPlantVisualParams());
                     break;
                 case GROWING_TIPS:
-                    plants.get(plants.size()-1).setGrowingTips(
+                    plants.get(plants.size() - 1).setGrowingTips(
                             ObjectFactory.createGreenHousePlantsPlantGrowingTips());
                     break;
             }
@@ -80,7 +86,7 @@ public class SAXParser extends AbstractXMLParser {
         public void endElement(String uri, String localName, String qName) throws SAXException {
             List<Plant> plants = greenHouse.getPlants().getPlant();
             Plant lastPlant = plants.get(plants.size() - 1);
-            switch(localName){
+            switch (localName) {
                 case NAME:
                     lastPlant.setName(temp);
                     break;

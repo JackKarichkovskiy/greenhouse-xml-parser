@@ -48,6 +48,7 @@ public abstract class AbstractXMLParser implements XMLParser<GreenHouse> {
     protected InputStream xmlis;
     protected InputStream xsdis;
     protected GreenHouse greenHouse;
+    protected Document doc;
 
     @Override
     public GreenHouse parse(InputStream xmlis, InputStream xsdis) throws Exception {

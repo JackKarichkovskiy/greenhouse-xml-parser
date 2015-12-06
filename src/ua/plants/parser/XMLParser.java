@@ -6,7 +6,9 @@
 package ua.plants.parser;
 
 import java.io.InputStream;
+import java.io.OutputStream;
 import ua.plants.generated.GreenHouse;
+import ua.plants.parser.exceptions.NotParsedDocumentException;
 
 /**
  *
@@ -16,4 +18,6 @@ import ua.plants.generated.GreenHouse;
 public interface XMLParser<T extends GreenHouse> {
 
     T parse(InputStream xmlis, InputStream xsdis) throws Exception;
+    
+    void renameRootElement(String newName, InputStream xmlis, InputStream xsdis, OutputStream xmlos) throws Exception;
 }
