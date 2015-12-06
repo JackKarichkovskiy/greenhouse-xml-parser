@@ -5,6 +5,9 @@
  */
 package ua.plants;
 
+import ua.plants.parser.XMLParser;
+import ua.plants.parser.XMLParserFactory;
+
 /**
  *
  * @author Karichkovskiy Yevhen
@@ -15,7 +18,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        XMLParserFactory factory = XMLParserFactory.getInstance(XMLParserFactory.XMLParserType.DOM);
+        XMLParser xmlParser = factory.getXMLParser();
+        System.out.println(xmlParser);
     }
     
 }

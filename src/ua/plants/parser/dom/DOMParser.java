@@ -3,17 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ua.plants.parser;
+package ua.plants.parser.dom;
 
 import java.io.InputStream;
 import ua.plants.generated.GreenHouse;
+import ua.plants.parser.XMLParser;
 
 /**
  *
  * @author Karichkovskiy Yevhen
- * @param <T> - type of parsed element
  */
-public interface XMLParser<T extends GreenHouse> {
+class DOMParser implements XMLParser<GreenHouse>{
 
-    T parse(InputStream is) throws Exception;
+    @Override
+    public GreenHouse parse(InputStream is) throws Exception {
+        return null;
+    }
+    
 }
