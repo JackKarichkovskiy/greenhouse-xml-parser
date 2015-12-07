@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 
 
-<greenhouse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="greenhouse.xsd">
+<greenhouse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <plants>
         <plant id="1">

@@ -24,21 +24,21 @@ public class Main {
     public static void main(String[] args) throws Exception {
         XMLParserFactory factory = XMLParserFactory.getInstance(XMLParserFactory.XMLParserType.DOM);
         XMLParser xmlParser = factory.getXMLParser();
-        
+
         String xmlPath = "src/xmlFiles/greenhouse.xml";
         String xsdPath = "src/xmlFiles/greenhouse.xsd";
-        
+
         //PARSING
         GreenHouse parsedGreenHouse = xmlParser.parse(
-                new FileInputStream(xmlPath),
-                new FileInputStream(xsdPath));
+                xmlPath,
+                xsdPath);
         System.out.println(parsedGreenHouse);
-        
+
         //CHANGING ROOT NAME
         xmlParser.renameRootElement("flower",
-                new FileInputStream(xmlPath),
-                new FileInputStream(xsdPath),
-                new FileOutputStream("src/xmlFiles/greenhouse(newRoot).xml"));
+                                    xmlPath,
+                                    xsdPath,
+                                    "src/xmlFiles/greenhouse(newRoot).xml");
     }
-    
+
 }

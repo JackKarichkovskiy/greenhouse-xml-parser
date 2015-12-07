@@ -28,11 +28,6 @@ public class SAXParser extends AbstractXMLParser {
 
     private String temp;
 
-    @Override
-    public void renameRootElement(String newName, InputStream xmlis, InputStream xsdis, OutputStream xmlos) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     class SaxHandler implements ContentHandler {
 
         @Override

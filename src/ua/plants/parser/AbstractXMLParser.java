@@ -5,6 +5,9 @@
  */
 package ua.plants.parser;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -53,23 +56,22 @@ public abstract class AbstractXMLParser implements XMLParser<GreenHouse> {
     protected static final String LIGHTING = "lighting";
     protected static final String TEMPERATURE = "temparature";
 
-    protected InputStream xmlis;
-    protected InputStream xsdis;
     protected GreenHouse greenHouse;
     protected Document doc;
 
     @Override
-    public GreenHouse parse(InputStream xmlis, InputStream xsdis) throws Exception {
-        this.xmlis = checkNotNull(xmlis);
-        this.xsdis = checkNotNull(xsdis);
+    public GreenHouse parse(String xmlFile, String xsdFile) throws Exception {
+        checkNotNull(xmlFile);
+        checkNotNull(xsdFile);
 
-        //validate(xmlis, xsdis);
-        return parseFile(xmlis);
+        validate(new FileInputStream(xmlFile), new FileInputStream(xsdFile)); //Validation
+        
+        return parseFile(new FileInputStream(xmlFile));
     }
 
     @Override
-    public void renameRootElement(String newName, InputStream xmlis, InputStream xsdis, OutputStream xmlos) throws Exception {
-        parse(xmlis, xsdis);
+    public void renameRootElement(String newName, String xmlInFile, String xsdFile, String xmlOutFile) throws Exception {
+        parse(xmlInFile, xsdFile);
 
         Element oldRoot = doc.getDocumentElement();
 
@@ -88,7 +90,7 @@ public abstract class AbstractXMLParser implements XMLParser<GreenHouse> {
         oldRoot.getParentNode().replaceChild(newRoot, oldRoot);
 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
-        Result output = new StreamResult(xmlos);
+        Result output = new StreamResult(new FileOutputStream(xmlOutFile));
         Source input = new DOMSource(doc);
 
         transformer.transform(input, output);
@@ -110,6 +112,7 @@ public abstract class AbstractXMLParser implements XMLParser<GreenHouse> {
             System.out.println(e);
             throw new InvalidDocumentException();
         }
+        System.out.println("Validation successful...");
     }
 
 }
