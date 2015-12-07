@@ -36,35 +36,6 @@ import ua.plants.parser.AbstractXMLParser;
 class DOMParser extends AbstractXMLParser {
 
     @Override
-    public void renameRootElement(String newName, InputStream xmlis, InputStream xsdis, OutputStream xmlos) throws Exception {
-        super.parse(xmlis, xsdis);
-
-        Document doc = super.doc;
-
-        Element oldRoot = doc.getDocumentElement();
-
-        Element newRoot = doc.createElement(newName);
-
-        NamedNodeMap attributes = oldRoot.getAttributes();
-        for (int i = 0; i < attributes.getLength(); i++) {
-            Node attr = doc.importNode(attributes.item(i), true);
-            newRoot.getAttributes().setNamedItem(attr);
-        }
-
-        while (oldRoot.hasChildNodes()) {
-            newRoot.appendChild(oldRoot.getFirstChild());
-        }
-
-        oldRoot.getParentNode().replaceChild(newRoot, oldRoot);
-
-        Transformer transformer = TransformerFactory.newInstance().newTransformer();
-        Result output = new StreamResult(xmlos);
-        Source input = new DOMSource(doc);
-
-        transformer.transform(input, output);
-    }
-
-    @Override
     protected GreenHouse parseFile(InputStream xmlis) throws Exception {
         greenHouse = ObjectFactory.createGreenHouse();
 
