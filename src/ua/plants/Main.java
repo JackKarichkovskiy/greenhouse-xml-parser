@@ -5,8 +5,6 @@
  */
 package ua.plants;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import ua.plants.generated.GreenHouse;
 import ua.plants.parser.XMLParser;
 import ua.plants.parser.XMLParserFactory;
@@ -22,7 +20,7 @@ public class Main {
      * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
-        XMLParserFactory factory = XMLParserFactory.getInstance(XMLParserFactory.XMLParserType.DOM);
+        XMLParserFactory factory = XMLParserFactory.getInstance(XMLParserFactory.XMLParserType.SAX);
         XMLParser xmlParser = factory.getXMLParser();
 
         String xmlPath = "src/xmlFiles/greenhouse.xml";

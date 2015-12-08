@@ -6,7 +6,6 @@
 package ua.plants.parser.sax;
 
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.List;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
@@ -59,18 +58,16 @@ public class SAXParser extends AbstractXMLParser {
         public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
             List<Plant> plants = greenHouse.getPlants().getPlant();
             switch (localName) {
-                case PLANT:
+                case GreenHouseTags.PLANT:
                     Plant plant = ObjectFactory.createGreenHousePlantsPlant();
-                    plant.setId(Integer.parseInt(atts.getValue(ID)));
+                    plant.setId(Integer.parseInt(atts.getValue(GreenHouseTags.ID)));
                     greenHouse.getPlants().getPlant().add(plant);
                     break;
-                case VISUAL_PARAMS:
-                    plants.
-                            get(plants.size() - 1)
-                            .setVisualParams(
-                                    ObjectFactory.createGreenHousePlantsPlantVisualParams());
+                case GreenHouseTags.VISUAL_PARAMS:
+                    plants.get(plants.size() - 1)
+                            .setVisualParams(ObjectFactory.createGreenHousePlantsPlantVisualParams());
                     break;
-                case GROWING_TIPS:
+                case GreenHouseTags.GROWING_TIPS:
                     plants.get(plants.size() - 1).setGrowingTips(
                             ObjectFactory.createGreenHousePlantsPlantGrowingTips());
                     break;
@@ -82,34 +79,34 @@ public class SAXParser extends AbstractXMLParser {
             List<Plant> plants = greenHouse.getPlants().getPlant();
             Plant lastPlant = plants.get(plants.size() - 1);
             switch (localName) {
-                case NAME:
+                case GreenHouseTags.NAME:
                     lastPlant.setName(temp);
                     break;
-                case SOIL:
+                case GreenHouseTags.SOIL:
                     lastPlant.setSoil(temp);
                     break;
-                case ORIGIN:
+                case GreenHouseTags.ORIGIN:
                     lastPlant.setOrigin(temp);
                     break;
-                case STALK_COLOR:
+                case GreenHouseTags.STALK_COLOR:
                     lastPlant.getVisualParams().setStalkColor(temp);
                     break;
-                case LEAF_COLOR:
+                case GreenHouseTags.LEAF_COLOR:
                     lastPlant.getVisualParams().setLeafColor(temp);
                     break;
-                case AVERAGE_SIZE:
+                case GreenHouseTags.AVERAGE_SIZE:
                     lastPlant.getVisualParams().setAverageSize(Float.parseFloat(temp));
                     break;
-                case TEMPERATURE:
+                case GreenHouseTags.TEMPERATURE:
                     lastPlant.getGrowingTips().setTemparature(Byte.parseByte(temp));
                     break;
-                case LIGHTING:
+                case GreenHouseTags.LIGHTING:
                     lastPlant.getGrowingTips().setLighting(Boolean.parseBoolean(temp));
                     break;
-                case WATERING:
+                case GreenHouseTags.WATERING:
                     lastPlant.getGrowingTips().setWatering(Integer.parseInt(temp));
                     break;
-                case MULTIPLYING:
+                case GreenHouseTags.MULTIPLYING:
                     lastPlant.setMultiplying(temp);
                     break;
             }

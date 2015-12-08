@@ -15,7 +15,9 @@ public abstract class XMLParserFactory {
 
     public enum XMLParserType {
 
-        DOM("ua.plants.parser.dom.DOMParserFactory"), SAX("ua.plants.parser.sax.SAXParserFactory");
+        DOM("ua.plants.parser.dom.DOMParserFactory"),
+        SAX("ua.plants.parser.sax.SAXParserFactory"),
+        STAX("ua.plants.parser.stax.StAXParserFactory");
 
         private final String clazz;
 
@@ -24,14 +26,15 @@ public abstract class XMLParserFactory {
         }
     }
 
-    public static XMLParserFactory getInstance(XMLParserType type){
-        switch(type){
+    public static XMLParserFactory getInstance(XMLParserType type) {
+        switch (type) {
             case DOM:
             case SAX:
-                try{
+            case STAX:
+                try {
                     Class clazz = Class.forName(type.clazz);
                     return (XMLParserFactory) clazz.newInstance();
-                }catch(Exception e){
+                } catch (Exception e) {
                     System.out.println(e.toString());
                     return null;
                 }
