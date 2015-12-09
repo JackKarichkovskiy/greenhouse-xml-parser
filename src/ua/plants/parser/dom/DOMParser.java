@@ -20,6 +20,7 @@ import ua.plants.generated.ObjectFactory;
 import ua.plants.parser.AbstractXMLParser;
 
 /**
+ * DOM realization of xml parser.
  *
  * @author Karichkovskiy Yevhen
  */
@@ -43,6 +44,12 @@ class DOMParser extends AbstractXMLParser {
         return greenHouse;
     }
 
+    /**
+     * Parses plants tag in xml.
+     *
+     * @param plants - plants element of xml
+     * @return parsed object
+     */
     private Plants parsePlants(Element plants) {
         Plants parsedPlants = ObjectFactory.createGreenHousePlants();
         NodeList plantList = plants.getElementsByTagName(GreenHouseTags.PLANT);
@@ -53,6 +60,12 @@ class DOMParser extends AbstractXMLParser {
         return parsedPlants;
     }
 
+    /**
+     * Parses plant tag in xml.
+     *
+     * @param plant - plant element of xml
+     * @return parsed object
+     */
     private Plant parsePlant(Element plant) {
         Plant parsedPlant = ObjectFactory.createGreenHousePlantsPlant();
         parsedPlant.setName(plant.getElementsByTagName(GreenHouseTags.NAME).item(0).getTextContent());
@@ -65,6 +78,12 @@ class DOMParser extends AbstractXMLParser {
         return parsedPlant;
     }
 
+    /**
+     * Parses visual parameters tag in xml.
+     *
+     * @param params - visual parameters element of xml
+     * @return parsed object
+     */
     private VisualParams parseVisualParams(Element params) {
         VisualParams parsedParams = ObjectFactory.createGreenHousePlantsPlantVisualParams();
         parsedParams.setStalkColor(params.getElementsByTagName(GreenHouseTags.STALK_COLOR).item(0).getTextContent());
@@ -73,6 +92,12 @@ class DOMParser extends AbstractXMLParser {
         return parsedParams;
     }
 
+    /**
+     * Parses growing tips tag in xml.
+     *
+     * @param tips - growing tips element of xml
+     * @return parsed object
+     */
     private GrowingTips parseGrowingTips(Element tips) {
         GrowingTips parsedTips = ObjectFactory.createGreenHousePlantsPlantGrowingTips();
         parsedTips.setTemparature(Byte.parseByte(tips.getElementsByTagName(GreenHouseTags.TEMPERATURE).item(0).getTextContent()));

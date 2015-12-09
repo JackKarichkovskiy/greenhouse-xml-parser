@@ -3,12 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/jack/NetBeansProjects/GreenhouseXMLProject/src/xmlFiles/greenhouse.xml</file>
             <file>file:/home/jack/NetBeansProjects/GreenhouseXMLProject/src/ua/plants/Main.java</file>
-            <file>file:/home/jack/NetBeansProjects/GreenhouseXMLProject/src/ua/plants/parser/XMLParser.java</file>
-            <file>file:/home/jack/NetBeansProjects/GreenhouseXMLProject/src/ua/plants/parser/AbstractXMLParser.java</file>
-            <file>file:/home/jack/NetBeansProjects/GreenhouseXMLProject/src/ua/plants/parser/stax/StAXParser.java</file>
-            <file>file:/home/jack/NetBeansProjects/GreenhouseXMLProject/src/ua/plants/parser/sax/SAXParser.java</file>
         </group>
     </open-files>
 </project-private>

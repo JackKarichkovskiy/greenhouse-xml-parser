@@ -9,6 +9,7 @@ import ua.plants.parser.XMLParser;
 import ua.plants.parser.XMLParserFactory;
 
 /**
+ * Class that produces StAX xml parsers.
  *
  * @author Karichkovskiy Yevhen
  */

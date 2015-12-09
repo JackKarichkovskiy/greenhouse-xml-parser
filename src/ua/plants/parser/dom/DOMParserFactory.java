@@ -9,14 +9,15 @@ import ua.plants.parser.XMLParserFactory;
 import ua.plants.parser.XMLParser;
 
 /**
+ * Factory that produces DOM xml parsers.
  *
  * @author Karichkovskiy Yevhen
  */
-public class DOMParserFactory extends XMLParserFactory{
+public class DOMParserFactory extends XMLParserFactory {
 
     @Override
     public XMLParser getXMLParser() {
         return new DOMParser();
     }
-    
+
 }

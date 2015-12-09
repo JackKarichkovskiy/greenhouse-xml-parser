@@ -10,7 +10,7 @@ import ua.plants.parser.XMLParser;
 import ua.plants.parser.XMLParserFactory;
 
 /**
- *
+ * Main class that calls parser methods.
  * @author Karichkovskiy Yevhen
  */
 public class Main {

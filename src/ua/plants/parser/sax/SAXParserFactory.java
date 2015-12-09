@@ -9,14 +9,15 @@ import ua.plants.parser.XMLParser;
 import ua.plants.parser.XMLParserFactory;
 
 /**
+ * Factory that produces SAX xml parsers.
  *
  * @author Karichkovskiy Yevhen
  */
-public class SAXParserFactory extends XMLParserFactory{
+public class SAXParserFactory extends XMLParserFactory {
 
     @Override
     public XMLParser getXMLParser() {
         return new SAXParser();
     }
-    
+
 }

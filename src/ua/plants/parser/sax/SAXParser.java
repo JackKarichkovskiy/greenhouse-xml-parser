@@ -20,13 +20,20 @@ import ua.plants.generated.ObjectFactory;
 import ua.plants.parser.AbstractXMLParser;
 
 /**
+ * SAX realization of xml parser.
  *
  * @author Karichkovskiy Yevhen
  */
 public class SAXParser extends AbstractXMLParser {
 
+    /**
+     * Field that stores temp string of tag content.
+     */
     private String temp;
 
+    /**
+     * Realization of SAX parsing.
+     */
     class SaxHandler implements ContentHandler {
 
         @Override

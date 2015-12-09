@@ -6,6 +6,7 @@
 package ua.plants.utils;
 
 /**
+ * Class contains different helpful functions that used threw over the system.
  *
  * @author Karichkovskiy Yevhen
  */

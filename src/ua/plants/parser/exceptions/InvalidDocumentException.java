@@ -6,9 +6,10 @@
 package ua.plants.parser.exceptions;
 
 /**
+ * Exception that occurs when document wasn't validated.
  *
  * @author Karichkovskiy Yevhen
  */
 public class InvalidDocumentException extends Exception {
-    
+
 }

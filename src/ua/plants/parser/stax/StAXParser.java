@@ -15,6 +15,7 @@ import ua.plants.generated.ObjectFactory;
 import ua.plants.parser.AbstractXMLParser;
 
 /**
+ * StAX realization of xml parser.
  *
  * @author Karichkovskiy Yevhen
  */
